@@ -168,6 +168,7 @@ movies %>%
   drop_na(budget)
 ```
 
+The following code is in the wrong order which caused the error.
 
 ## Arrange
 
@@ -196,7 +197,12 @@ movies_2000 %>%
 # Using the original 'movies' data, what is the longest movie? What is the oldest movie?
 ```
 
+```{r}
+movies%>%
+  arrange(year)
+```
 
+After running the code I foun out that the longest movie was the Cure for Insomnia (5220 minutes). While the oldest movie was the Blacksmith scene (1893).
 
 ## Scavenger Hunt
 
@@ -205,8 +211,11 @@ See if you can answer these questions:
 1. How many movies were released in 1995?
 
 ```{r}
-
+movies_1995 <- movies %>%
+  filter(year==1995)
 ```
+
+After running the code I found out that there are 1248 movies that were released in 1995.
 
 2. Which Comedies with an MPAA rating, over 120 minutes have a rating above 8?
 
